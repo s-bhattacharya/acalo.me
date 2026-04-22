@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia Logica | Sayon Bhattacharya — LSAT & GRE Tutor</title>
+  <meta name="description" content="LSAT & GRE tutoring by Sayon Bhattacharya — corporate lawyer, 176 LSAT scorer, 99th percentile. Students move from 150s to 170s in 6 weeks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --bg2: #141414;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f5f0e8;
+      --muted: #6b6b6b;
+      --border: #222222;
+      --text: #d4cfc7;
+    }
+
+```
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: rgba(14,14,14,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold) !important;
+  padding: 0.5rem 1.2rem;
+  transition: background 0.3s, color 0.3s !important;
+}
+
+.nav-cta:hover {
+  background: var(--gold) !important;
+  color: var(--bg) !important;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '176';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28vw;
+  font-weight: 300;
+  color: rgba(201,168,76,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-inner {
+  max-width: 900px;
+  animation: fadeUp 1s ease both;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 2rem;
+}
+
+h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 0.9rem 2rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.9rem 2rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* STATS BAR */
+.stats-bar {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--bg2);
+}
+
+.stat {
+  padding: 2.5rem 3rem;
+  border-right: 1px solid var(--border);
+  animation: fadeUp 0.8s ease both;
+}
+
+.stat:last-child { border-right: none; }
+
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* SECTIONS */
+section {
+  padding: 7rem 4rem;
+}
+
+.section-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+h2 em { font-style: italic; color: var(--gold); }
+
+/* ABOUT */
+.about {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text p {
+  color: var(--text);
+  margin-bottom: 1.4rem;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.about-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.credential {
+  padding: 1.8rem;
+  border: 1px solid var(--border);
+  position: relative;
+  transition: border-color 0.3s;
+}
+
+.credential:hover { border-color: var(--gold); }
+
+.credential-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(201,168,76,0.15);
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+  line-height: 1;
+}
+
+.credential-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.credential-desc {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* RESULTS */
+.results { max-width: 1200px; margin: 0 auto; }
+
+.results-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.results-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.result-card {
+  background: var(--bg);
+  padding: 2.5rem;
+  transition: background 0.3s;
+}
+
+.result-card:hover { background: var(--bg2); }
+
+.result-score {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.score-from {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.score-arrow {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.score-to {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.result-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* FEATURED RESULT */
+.featured-result {
+  grid-column: 1 / -1;
+  background: var(--bg2);
+  padding: 3rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.featured-result-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--cream);
+  font-style: italic;
+  max-width: 600px;
+}
+
+.featured-result-meta {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.featured-result-school {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.featured-result-detail {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* COHORT */
+.cohort {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.cohort-inner { max-width: 1200px; margin: 0 auto; }
+
+.cohort-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: end;
+}
+
+.cohort-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+.week-card {
+  background: var(--bg);
+  padding: 2rem;
+  transition: background 0.3s;
+}
+
+.week-card:hover { background: #1a1a1a; }
+
+.week-number {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.week-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--cream);
+  margin-bottom: 0.6rem;
+}
+
+.week-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.cohort-pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.price-card {
+  background: var(--bg);
+  padding: 2.5rem;
+}
+
+.price-region {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: var(--gold);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.price-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* YOUTUBE */
+.youtube-section { max-width: 1200px; margin: 0 auto; }
+
+.youtube-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.youtube-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.youtube-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.youtube-text p {
+  color: var(--text);
+  margin-bottom: 1.4rem;
+  line-height: 1.9;
+}
+
+/* CONTACT */
+.contact {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-inner p {
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.contact-email {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: color 0.3s;
+}
+
+.contact-email:hover { color: var(--gold); }
+
+/* FOOTER */
+footer {
+  padding: 2rem 4rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* URGENCY BANNER */
+.urgency-banner {
+  background: var(--gold);
+  color: var(--bg);
+  text-align: center;
+  padding: 0.75rem 2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.urgency-banner a {
+  color: var(--bg);
+  text-decoration: underline;
+  margin-left: 0.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { display: none; }
+  section { padding: 5rem 1.5rem; }
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .about-grid,
+  .results-header,
+  .cohort-header,
+  .youtube-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .stat { border-bottom: 1px solid var(--border); }
+  .results-body { grid-template-columns: 1fr; }
+  .cohort-grid { grid-template-columns: 1fr; }
+  .cohort-pricing { grid-template-columns: 1fr; }
+  .featured-result { flex-direction: column; }
+  .featured-result-meta { text-align: left; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; }
+  .hero::before { font-size: 50vw; opacity: 0.5; }
+}
+```
+
+  </style>
+</head>
+<body>
+
+  <!-- URGENCY BANNER -->
+
+  <div class="urgency-banner">
+    June LSAT Intensive — 5 Spots Remaining. Starts April 27.
+    <a href="#contact">Book Now →</a>
+  </div>
+
+  <!-- NAV -->
+
+  <nav>
+    <a href="#" class="nav-logo">Academia Logica</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#cohort">Cohort</a></li>
+      <li><a href="#youtube">Watch</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Trial</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">LSAT & GRE — Law School Preparation</div>
+      <h1>Think like<br>a <em>lawyer.</em><br>Score like one.</h1>
+      <p class="hero-sub">
+        Taught by Sayon Bhattacharya — corporate lawyer, Bar Council member, and 176 LSAT scorer. Rigorous, personalised preparation for students who are serious about law school.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book a Trial Lesson</a>
+        <a href="#cohort" class="btn-secondary">View June Intensive</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+
+  <div class="stats-bar">
+    <div class="stat fade-up">
+      <div class="stat-number">176</div>
+      <div class="stat-label">LSAT Score — 99th Percentile</div>
+    </div>
+    <div class="stat fade-up">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Students Taught</div>
+    </div>
+    <div class="stat fade-up">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Years Teaching</div>
+    </div>
+    <div class="stat fade-up">
+      <div class="stat-number">$15K</div>
+      <div class="stat-label">Scholarship — Northwestern University</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <div class="section-eyebrow">About</div>
+        <h2>A lawyer who <em>teaches</em> the law.</h2>
+        <p>
+          I'm Sayon Bhattacharya — a practicing corporate lawyer and one of the highest-scoring LSAT tutors available anywhere. I scored 174 in 2021 and returned to score 176 in 2022, placing in the 99th percentile on both attempts.
+        </p>
+        <p>
+          I didn't take the LSAT to apply to law school. I took it because I was fascinated by how precisely it mirrors the logical reasoning that legal practice actually demands. That curiosity — and the legal training behind it — is what I bring to every student.
+        </p>
+        <p>
+          With six years of teaching experience across analytical reasoning, legal studies, and history, including work with the British Council Foundation, I've developed an approach built not on shortcuts, but on building the reasoning faculty the LSAT is designed to measure.
+        </p>
+      </div>
+      <div class="about-credentials fade-up">
+        <div class="credential">
+          <div class="credential-number">01</div>
+          <div class="credential-title">Legal Practitioner</div>
+          <div class="credential-desc">Corporate lawyer. Member, Bar Council of India. Graduate of NMIMS University Mumbai.</div>
+        </div>
+        <div class="credential">
+          <div class="credential-number">02</div>
+          <div class="credential-title">99th Percentile — Twice</div>
+          <div class="credential-desc">LSAT scores of 174 (2021) and 176 (2022). Among the highest-scoring active tutors globally.</div>
+        </div>
+        <div class="credential">
+          <div class="credential-number">03</div>
+          <div class="credential-title">British Council Foundation</div>
+          <div class="credential-desc">Six years of professional teaching across analytical reasoning, legal studies, and history.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+
+  <section id="results">
+    <div class="results">
+      <div class="results-header fade-up">
+        <div>
+          <div class="section-eyebrow">Results</div>
+          <h2>Mid 150s to <em>170s.</em><br>In six weeks.</h2>
+        </div>
+        <div style="color: var(--muted); line-height: 1.9; padding-top: 1rem;">
+          Score improvement is not accidental. It is the result of precise diagnosis, targeted practice, and instruction built around how legal reasoning actually works — not generic test-taking strategy.
+        </div>
+      </div>
+
+```
+  <div class="results-body fade-up">
+    <div class="result-card">
+      <div class="result-score">
+        <span class="score-from">152</span>
+        <span class="score-arrow">→</span>
+        <span class="score-to">171</span>
+      </div>
+      <div class="result-label">+19 Points — 6 Weeks</div>
+    </div>
+    <div class="result-card">
+      <div class="result-score">
+        <span class="score-from">155</span>
+        <span class="score-arrow">→</span>
+        <span class="score-to">170</span>
+      </div>
+      <div class="result-label">+15 Points — 6 Weeks</div>
+    </div>
+    <div class="result-card">
+      <div class="result-score">
+        <span class="score-from">158</span>
+        <span class="score-arrow">→</span>
+        <span class="score-to">173</span>
+      </div>
+      <div class="result-label">+15 Points — 6 Weeks</div>
+    </div>
+
+    <div class="featured-result">
+      <div class="featured-result-text">
+        "One of my students secured admission with a $15,000 merit scholarship — the result of deliberate, focused preparation."
+      </div>
+      <div class="featured-result-meta">
+        <div class="featured-result-school">Northwestern University</div>
+        <div class="featured-result-detail">$15,000 Merit Scholarship</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- COHORT -->
+
+  <section class="cohort" id="cohort">
+    <div class="cohort-inner">
+      <div class="cohort-header fade-up">
+        <div>
+          <div class="section-eyebrow">June Intensive — Now Open</div>
+          <h2>Six weeks.<br><em>Three sessions</em> a week.<br>One outcome.</h2>
+        </div>
+        <div style="color: var(--muted); line-height: 1.9; padding-top: 1rem;">
+          A structured, live cohort for students who have been self-studying and need to break through their score ceiling. Small group. Personal feedback. Built around your weaknesses, not a generic curriculum.
+          <br><br>
+          <strong style="color: var(--text);">Starts Monday, April 27. 5 seats only.</strong>
+        </div>
+      </div>
+
+```
+  <div class="cohort-grid fade-up">
+    <div class="week-card">
+      <div class="week-number">Week 01</div>
+      <div class="week-title">Diagnosis & Foundation</div>
+      <div class="week-desc">Full diagnostic. Identify precisely where your score is being lost. Build the error tracking system.</div>
+    </div>
+    <div class="week-card">
+      <div class="week-number">Week 02</div>
+      <div class="week-title">Logical Reasoning I</div>
+      <div class="week-desc">Assumption, Flaw, and Must Be True — the question types that make or break your LR score.</div>
+    </div>
+    <div class="week-card">
+      <div class="week-number">Week 03</div>
+      <div class="week-title">Logical Reasoning II</div>
+      <div class="week-desc">Strengthen, Weaken, Parallel Reasoning — the harder types that separate 160 from 170.</div>
+    </div>
+    <div class="week-card">
+      <div class="week-number">Week 04</div>
+      <div class="week-title">Logical Reasoning III</div>
+      <div class="week-desc">Principle questions, advanced LR patterns, and closing every remaining gap under timed conditions.</div>
+    </div>
+    <div class="week-card">
+      <div class="week-number">Week 05</div>
+      <div class="week-title">Reading Comprehension</div>
+      <div class="week-desc">Active reading framework. Inference and comparative passages. Precision under time pressure.</div>
+    </div>
+    <div class="week-card">
+      <div class="week-number">Week 06</div>
+      <div class="week-title">Full Simulation</div>
+      <div class="week-desc">Full timed test. Individual debrief. Test day strategy. Peak performance preparation.</div>
+    </div>
+  </div>
+
+  <div class="cohort-pricing fade-up">
+    <div class="price-card">
+      <div class="price-region">North America</div>
+      <div class="price-amount">$75</div>
+      <div class="price-note">Full 4-week intensive. Payment via Wise or PayPal.</div>
+    </div>
+    <div class="price-card">
+      <div class="price-region">India & South Asia</div>
+      <div class="price-amount">₹8,000</div>
+      <div class="price-note">Full 4-week intensive. Payment via UPI or bank transfer.</div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- YOUTUBE -->
+
+  <section id="youtube">
+    <div class="youtube-section">
+      <div class="youtube-grid">
+        <div class="youtube-embed fade-up">
+          <iframe
+            src="https://www.youtube.com/embed/A8_pmD7Vj-I"
+            title="Academia Logica — Introduction"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="youtube-text fade-up">
+          <div class="section-eyebrow">Watch</div>
+          <h2>Free teaching.<br><em>Every week.</em></h2>
+          <p>
+            The Academia Logica YouTube channel covers LSAT Logical Reasoning, Reading Comprehension, GRE Verbal, and law school admissions strategy — for both North American and South Asian applicants.
+          </p>
+          <p>
+            Real instruction, not tips. Subscribe and see whether the teaching style works for you before booking anything.
+          </p>
+          <a href="https://youtube.com/@theacademialogica" target="_blank" rel="noopener" class="btn-primary">Subscribe on YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+    <div class="contact-inner fade-up">
+      <div class="section-eyebrow" style="justify-content: center;">Book a Trial Lesson</div>
+      <h2>Ready to <em>get to work?</em></h2>
+      <p>
+        Book a trial lesson. In our first session together, I will assess your current reasoning patterns, identify exactly what is holding your score back, and give you a clear picture of what preparation needs to look like.
+      </p>
+      <div class="contact-actions">
+        <a href="YOUR_PREPLY_LINK_HERE" target="_blank" class="btn-primary">Book on Preply</a>
+        <a href="mailto:acaloprep@gmail.com" class="btn-secondary">Email Directly</a>
+      </div>
+      <a href="mailto:acaloprep@gmail.com" class="contact-email">acaloprep@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <a href="#" class="footer-logo">Academia Logica</a>
+    <div class="footer-links">
+      <a href="https://youtube.com/@theacademialogica" target="_blank">YouTube</a>
+      <a href="mailto:acaloprep@gmail.com">Email</a>
+    </div>
+    <div class="footer-copy">© 2026 Sayon Bhattacharya. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
