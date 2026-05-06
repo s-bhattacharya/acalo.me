@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flaw Questions — Complete Guide | Academia Logica</title>
+  <meta name="description" content="A complete guide to LSAT Flaw Questions — all 18 flaw types, five worked examples with interactive answer reveal, and a full practice drill set." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --bg:       #0e0e0e;
+      --bg2:      #141414;
+      --bg3:      #1a1a1a;
+      --gold:     #c9a84c;
+      --gold-lt:  #e8c97a;
+      --cream:    #f0ebe0;
+      --muted:    #5a5a5a;
+      --border:   #1e1e1e;
+      --text:     #a8a39b;
+      /* reading zone */
+      --r-bg:     #f7f4ef;
+      --r-bg2:    #ffffff;
+      --r-text:   #1c1c1c;
+      --r-muted:  #5a5650;
+      --r-border: #ddd8cc;
+      --r-gold:   #9a7228;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+```
+/* ── NAV ── */
+nav { position: sticky; top: 0; z-index: 200; background: rgba(14,14,14,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); height: 58px; display: flex; align-items: center; justify-content: space-between; padding: 0 1.25rem; }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; letter-spacing: 0.2em; color: var(--gold); text-decoration: none; text-transform: uppercase; }
+.nav-links { display: none; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover { color: var(--gold); }
+.btn-nav { background: var(--gold) !important; color: #0e0e0e !important; padding: 0.45rem 1rem; }
+.btn-nav:hover { background: var(--gold-lt) !important; }
+.ham { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 4px; }
+.ham span { display: block; width: 21px; height: 1.5px; background: var(--text); transition: all 0.25s; }
+.ham.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.ham.open span:nth-child(2) { opacity: 0; }
+.ham.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mob { display: none; position: fixed; top: 58px; left: 0; right: 0; background: var(--bg2); border-bottom: 1px solid var(--border); z-index: 190; flex-direction: column; }
+.mob.open { display: flex; }
+.mob a { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); color: var(--text); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+.mob a:last-child { color: var(--gold); border-bottom: none; }
+.mob a:hover { color: var(--gold); }
+
+/* ── GUIDE HEADER ── */
+.guide-header { padding: 3.5rem 1.25rem 2.5rem; border-bottom: 1px solid var(--border); }
+.breadcrumb { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.guide-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.gtag { font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); padding: 0.2rem 0.55rem; }
+.guide-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 7vw, 3.8rem); font-weight: 300; color: var(--cream); line-height: 1.08; margin-bottom: 0.8rem; }
+.guide-header h1 em { font-style: italic; color: var(--gold); }
+.guide-desc { font-size: 0.9rem; color: var(--muted); max-width: 580px; line-height: 1.85; margin-bottom: 1.5rem; }
+.guide-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.meta-item { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.meta-item span { color: var(--text); }
+
+/* ── TOC ── */
+.toc { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 1rem 1.25rem; }
+.toc-lbl { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+.toc-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.toc-links a { font-size: 0.68rem; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.75rem; transition: all 0.2s; white-space: nowrap; }
+.toc-links a:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── READING ZONE ── */
+.rz { background: var(--r-bg); }
+.rz-inner { max-width: 760px; margin: 0 auto; padding: 3rem 1.25rem; }
+
+.part-lbl { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--r-gold); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.7rem; }
+.part-lbl::before { content: ''; display: block; width: 1rem; height: 1px; background: var(--r-gold); flex-shrink: 0; }
+
+.rz h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 4.5vw, 2.6rem); font-weight: 300; color: var(--r-text); line-height: 1.12; margin-bottom: 1rem; margin-top: 2.5rem; }
+.rz h2:first-child { margin-top: 0; }
+.rz h2 em { font-style: italic; color: var(--r-gold); }
+.rz h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.15rem, 3vw, 1.5rem); font-weight: 400; color: var(--r-text); margin: 2rem 0 0.6rem; }
+
+.rz p { font-family: 'Georgia', serif; font-size: 1rem; color: var(--r-text); line-height: 1.9; margin-bottom: 1.1rem; }
+
+hr.sr { border: none; border-top: 1px solid var(--r-border); margin: 2.5rem 0; }
+
+/* callout */
+.callout { background: var(--r-bg2); border: 1px solid var(--r-border); border-left: 3px solid var(--r-gold); padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+.callout p { font-family: 'Georgia', serif; font-style: italic; font-size: 0.97rem; color: var(--r-muted); margin-bottom: 0.5rem; }
+.callout p:last-child { margin-bottom: 0; }
+.callout p strong { font-style: normal; color: var(--r-text); font-family: 'DM Sans', sans-serif; font-size: 0.92rem; }
+
+/* highlight */
+.hl-box { background: #fdf6e3; border: 1px solid #e0c87a; padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+.hl-box p { font-family: 'Georgia', serif; font-style: italic; font-size: 0.97rem; color: var(--r-muted); margin-bottom: 0.4rem; }
+.hl-box p:last-child { margin-bottom: 0; }
+
+/* diagram */
+.diagram-wrap { margin: 1.8rem 0; overflow-x: auto; }
+.diagram { display: flex; align-items: stretch; min-width: 400px; background: var(--r-bg2); border: 1px solid var(--r-border); }
+.d-box { flex: 1; padding: 1.2rem 0.8rem; text-align: center; border-right: 1px solid var(--r-border); }
+.d-box:last-child { border-right: none; }
+.d-box.gap-box { background: #fdf6e3; }
+.d-title { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--r-gold); margin-bottom: 0.4rem; font-family: 'DM Sans', sans-serif; }
+.d-sub { font-size: 0.78rem; color: var(--r-muted); font-family: 'DM Sans', sans-serif; font-style: italic; }
+.d-arrow { display: flex; align-items: center; padding: 0 0.3rem; color: var(--r-gold); font-size: 1rem; flex-shrink: 0; }
+.diagram-note { font-size: 0.75rem; color: var(--r-muted); font-style: italic; text-align: center; margin-top: 0.5rem; font-family: 'DM Sans', sans-serif; }
+
+/* flaw group label */
+.flaw-group { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--r-gold); border-bottom: 1px solid var(--r-border); padding-bottom: 0.6rem; margin: 2rem 0 0.6rem; font-family: 'DM Sans', sans-serif; }
+
+/* flaw card */
+.fc { background: var(--r-bg2); border: 1px solid var(--r-border); margin-bottom: 6px; }
+.fc-header { display: flex; align-items: flex-start; gap: 0.9rem; padding: 0.9rem 1.1rem; cursor: pointer; user-select: none; }
+.fc-header:hover .fc-name { color: var(--r-gold); }
+.fc-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #cdc5b5; font-weight: 300; line-height: 1; flex-shrink: 0; min-width: 1.8rem; }
+.fc-name { font-family: 'Georgia', serif; font-size: 0.98rem; color: var(--r-text); line-height: 1.3; flex: 1; transition: color 0.2s; padding-top: 0.15rem; }
+.fc-chevron { color: var(--r-gold); font-size: 0.75rem; flex-shrink: 0; transition: transform 0.2s; padding-top: 0.3rem; }
+.fc.open .fc-chevron { transform: rotate(180deg); }
+.fc-body { display: none; padding: 0 1.1rem 1.1rem 1.1rem; border-top: 1px solid var(--r-border); }
+.fc.open .fc-body { display: block; }
+.fc-body p { font-family: 'Georgia', serif; font-size: 0.95rem; color: var(--r-text); line-height: 1.85; margin-top: 0.9rem; margin-bottom: 0.7rem; }
+.fc-lbl { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--r-gold); margin: 0.8rem 0 0.3rem; font-family: 'DM Sans', sans-serif; }
+.fc-example { border-left: 2px solid #cdc5b5; padding: 0.7rem 1rem; background: var(--r-bg); font-family: 'Georgia', serif; font-style: italic; font-size: 0.93rem; color: var(--r-muted); line-height: 1.7; margin-bottom: 0.6rem; }
+.fc-pattern { background: #f0ede5; padding: 0.7rem 1rem; font-size: 0.82rem; color: var(--r-muted); font-family: 'DM Sans', sans-serif; line-height: 1.65; }
+
+/* steps */
+.steps { display: flex; flex-direction: column; gap: 6px; margin: 1.5rem 0; }
+.step { background: var(--r-bg2); border: 1px solid var(--r-border); padding: 1.1rem 1.2rem; display: flex; gap: 1rem; align-items: flex-start; }
+.step-n { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #cdc5b5; line-height: 1; flex-shrink: 0; min-width: 1.6rem; }
+.step-title { font-family: 'Georgia', serif; font-size: 0.97rem; color: var(--r-text); margin-bottom: 0.35rem; }
+.step-body { font-size: 0.9rem; color: var(--r-muted); font-family: 'DM Sans', sans-serif; line-height: 1.75; margin: 0; }
+
+/* traps */
+.traps { display: flex; flex-direction: column; gap: 6px; margin: 1.5rem 0; }
+.trap { background: var(--r-bg2); border: 1px solid var(--r-border); border-left: 3px solid #cdc5b5; padding: 1rem 1.2rem; }
+.trap-title { font-family: 'Georgia', serif; font-size: 0.97rem; color: var(--r-text); margin-bottom: 0.35rem; }
+.trap-body { font-size: 0.88rem; color: var(--r-muted); font-family: 'DM Sans', sans-serif; line-height: 1.75; margin: 0; }
+
+/* ── DARK SECTIONS (worked + drill) ── */
+.dark-section { background: var(--bg); padding: 3rem 1.25rem; border-top: 1px solid var(--border); }
+.dark-inner { max-width: 760px; margin: 0 auto; }
+.dark-section .part-lbl { color: var(--gold); }
+.dark-section .part-lbl::before { background: var(--gold); }
+.dark-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 4.5vw, 2.6rem); font-weight: 300; color: var(--cream); line-height: 1.12; margin-bottom: 0.8rem; }
+.dark-section h2 em { font-style: italic; color: var(--gold); }
+.dark-section > .dark-inner > p,
+.dark-section .dark-inner > p { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+
+/* question block */
+.qb { background: var(--bg2); border: 1px solid var(--border); margin-bottom: 1.2rem; overflow: hidden; }
+.qb-num { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 0.85rem 1.2rem 0; font-family: 'DM Sans', sans-serif; }
+.qb-stimulus { font-family: 'Georgia', serif; font-size: 0.95rem; color: var(--text); line-height: 1.85; padding: 0.6rem 1.2rem 0.9rem; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.015); }
+.qb-stem { font-family: 'DM Sans', sans-serif; font-size: 0.86rem; font-weight: 500; color: var(--cream); padding: 0.85rem 1.2rem 0.5rem; }
+.qb-choices { padding: 0 1.2rem 0.9rem; display: flex; flex-direction: column; gap: 4px; }
+.qb-btn { background: transparent; border: 1px solid var(--border); color: var(--text); padding: 0.65rem 0.9rem; text-align: left; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start; font-family: 'DM Sans', sans-serif; font-size: 0.84rem; line-height: 1.55; transition: border-color 0.15s, color 0.15s; width: 100%; }
+.qb-btn:hover:not(:disabled) { border-color: var(--gold); color: var(--cream); }
+.qb-btn:disabled { cursor: default; }
+.cl { font-weight: 600; color: var(--gold); flex-shrink: 0; min-width: 0.9rem; }
+.qb-btn.correct { background: rgba(42,110,42,0.1); border-color: #2a6e2a; color: #80c880; }
+.qb-btn.correct .cl { color: #80c880; }
+.qb-btn.wrong { background: rgba(160,40,40,0.08); border-color: #7a2a2a; color: #b06060; }
+.qb-btn.wrong .cl { color: #b06060; }
+.qb-btn.dimmed { opacity: 0.35; }
+.qb-exp { display: none; padding: 0.9rem 1.2rem; background: rgba(42,110,42,0.05); border-top: 1px solid rgba(42,110,42,0.18); }
+.qb-exp.show { display: block; }
+.exp-lbl { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: #80c880; margin-bottom: 0.45rem; font-family: 'DM Sans', sans-serif; }
+.qb-exp p { font-family: 'DM Sans', sans-serif; font-size: 0.86rem; color: rgba(255,255,255,0.6); line-height: 1.78; margin: 0; }
+
+/* drill answer key */
+.answer-key { margin-top: 2rem; border: 1px solid var(--border); }
+.ak-header { background: var(--bg3); padding: 0.8rem 1.2rem; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; display: flex; gap: 0; }
+.ak-row { display: grid; grid-template-columns: 2fr 0.6fr 2.4fr; border-top: 1px solid var(--border); }
+.ak-row:nth-child(even) { background: rgba(255,255,255,0.015); }
+.ak-cell { padding: 0.75rem 1.2rem; font-size: 0.82rem; font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.5; }
+.ak-cell.ans { color: #80c880; font-weight: 600; }
+.ak-header-row { display: grid; grid-template-columns: 2fr 0.6fr 2.4fr; background: var(--bg3); border-top: 1px solid var(--border); }
+.ak-header-cell { padding: 0.6rem 1.2rem; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; }
+
+/* closing note */
+.closing { background: var(--bg2); border: 1px solid var(--border); padding: 1.8rem; margin-top: 2rem; }
+.closing-lbl { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; font-family: 'DM Sans', sans-serif; }
+.closing p { font-family: 'Georgia', serif; font-style: italic; font-size: 0.97rem; color: var(--text); line-height: 1.85; margin-bottom: 0.8rem; }
+.closing p:last-child { margin-bottom: 0; font-style: normal; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--muted); }
+
+/* ── FOOTER ── */
+footer { padding: 2rem 1.25rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 1rem; align-items: center; text-align: center; }
+.f-logo { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+.f-links { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; }
+.f-links a { font-size: 0.65rem; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+.f-links a:hover { color: var(--gold); }
+.f-copy { font-size: 0.65rem; color: var(--muted); }
+
+/* ── RESPONSIVE ── */
+@media (min-width: 640px) {
+  nav { padding: 0 2.5rem; }
+  .guide-header { padding: 4.5rem 2.5rem 3rem; }
+  .toc { padding: 1rem 2.5rem; }
+  .rz-inner { padding: 4rem 2.5rem; }
+  .dark-section { padding: 4rem 2.5rem; }
+  footer { padding: 2rem 2.5rem; }
+}
+@media (min-width: 1024px) {
+  nav { padding: 0 4rem; height: 64px; }
+  .ham { display: none; }
+  .nav-links { display: flex; }
+  .guide-header { padding: 5rem 4rem 3.5rem; }
+  .toc { padding: 1rem 4rem; }
+  .rz-inner { padding: 5rem 4rem; }
+  .dark-section { padding: 5rem 4rem; }
+  footer { padding: 2rem 4rem; flex-direction: row; justify-content: space-between; text-align: left; }
+}
+```
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="index.html" class="nav-logo">Academia Logica</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#results">Results</a></li>
+    <li><a href="index.html#cohort">Cohort</a></li>
+    <li><a href="guides.html">Guides</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="index.html#contact" class="btn-nav">Book a Trial</a></li>
+  </ul>
+  <button class="ham" id="ham"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mob">
+  <a href="index.html#about">About</a>
+  <a href="index.html#results">Results</a>
+  <a href="index.html#cohort">Cohort</a>
+  <a href="guides.html">Guides</a>
+  <a href="resources.html">Resources</a>
+  <a href="index.html#contact">Book a Trial Lesson →</a>
+</div>
+
+<!-- GUIDE HEADER -->
+
+<div class="guide-header">
+  <div class="breadcrumb"><a href="guides.html">Guides</a> &nbsp;/&nbsp; LSAT &nbsp;/&nbsp; Logical Reasoning</div>
+  <div class="guide-tags">
+    <span class="gtag">LSAT</span>
+    <span class="gtag">Logical Reasoning</span>
+  </div>
+  <h1>Flaw Questions — <em>Complete Guide</em></h1>
+  <p class="guide-desc">From first principles to mastery. Covers every flaw type the LSAT tests, the exact language patterns used in correct answers, five fully worked questions with interactive answer reveal, and a complete practice drill set.</p>
+  <div class="guide-meta">
+    <div class="meta-item">Level &nbsp;<span>Beginner to Advanced</span></div>
+    <div class="meta-item">Flaw types &nbsp;<span>18</span></div>
+    <div class="meta-item">Worked questions &nbsp;<span>5</span></div>
+    <div class="meta-item">Drill set &nbsp;<span>5 questions</span></div>
+  </div>
+</div>
+
+<!-- TOC -->
+
+<div class="toc">
+  <div class="toc-lbl">Jump to section</div>
+  <div class="toc-links">
+    <a href="#p1">What is a Flaw Question?</a>
+    <a href="#p2">Flaw Taxonomy</a>
+    <a href="#p3">The Method</a>
+    <a href="#p4">Worked Questions</a>
+    <a href="#p5">Drill Set</a>
+  </div>
+</div>
+
+<!-- ═══════════════ READING ZONE ═══════════════ -->
+
+<div class="rz">
+<div class="rz-inner">
+
+<!-- PART 1 -->
+
+<div id="p1">
+  <div class="part-lbl">Part One</div>
+  <h2>What is a <em>Flaw Question?</em></h2>
+
+  <p>Before we get into tactics, let us agree on what we are actually dealing with. A Flaw question gives you an argument — a set of premises leading to a conclusion — and asks you to identify what is logically wrong with it. The argument always has a problem. Your job is to name that problem precisely, in the same terms the correct answer uses.</p>
+
+  <p>You will recognise a Flaw question by its stem. The most common phrasings you will see are:</p>
+
+  <div class="callout">
+    <p>The reasoning in the argument is flawed because the argument...</p>
+    <p>The argument's reasoning is most vulnerable to criticism on the grounds that...</p>
+    <p>Which one of the following identifies a flaw in the argument's reasoning?</p>
+    <p>The argument above is most vulnerable to which of the following objections?</p>
+  </div>
+
+  <p>When you see any of these, the approach is identical every time. Find the gap in the argument, understand why it is a problem, and match it to the answer choice that describes it most accurately.</p>
+
+  <p>Flaw questions appear frequently — typically four to six times on a single LSAT. They are among the most learnable question types because every flaw the LSAT tests has appeared before. There is a finite list. Once you know that list, you stop discovering flaws and start recognising them. That shift, from discovery to recognition, is what separates a 155 from a 170 on this question type.</p>
+
+  <hr class="sr" />
+
+  <h2>The Anatomy of a <em>Flawed Argument</em></h2>
+
+  <p>Every LSAT argument has the same structure. There are premises — statements offered as evidence — and there is a conclusion — the claim the argument is trying to establish. In a valid argument, the conclusion follows necessarily from the premises. In a flawed argument, it does not. There is a gap: something unstated and unjustified that the argument silently assumes must be true in order for the conclusion to hold.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram">
+      <div class="d-box">
+        <div class="d-title">Premises</div>
+        <div class="d-sub">What we are told</div>
+      </div>
+      <div class="d-arrow">→</div>
+      <div class="d-box gap-box">
+        <div class="d-title">The Gap</div>
+        <div class="d-sub">Hidden assumption — the flaw lives here</div>
+      </div>
+      <div class="d-arrow">→</div>
+      <div class="d-box">
+        <div class="d-title">Conclusion</div>
+        <div class="d-sub">What is claimed</div>
+      </div>
+    </div>
+    <div class="diagram-note">Figure 1 — The argument treats the gap as though it were established fact. It is not.</div>
+  </div>
+
+  <p>Here is a simple example. Consider this argument:</p>
+
+  <div class="hl-box">
+    <p><strong>Premise:</strong> Every time I eat at this restaurant, the food takes forty minutes to arrive.</p>
+    <p><strong>Conclusion:</strong> The chef at this restaurant is slow.</p>
+  </div>
+
+  <p>The premise is about food taking a long time. The conclusion is about the chef being slow. But there is a hidden leap: the argument assumes the delay is caused by the chef, when it could equally be caused by an understaffed wait team, a large volume of orders, or a dozen other things. That hidden, unjustified assumption is the flaw.</p>
+
+  <p>Your task on every Flaw question is to find that gap and describe it. The correct answer will name the logical error precisely. The four wrong answers will either describe flaws that are not present in the argument, or describe something the argument did accurately but in a way that sounds like a criticism when it is not actually a logical error.</p>
+
+  <hr class="sr" />
+
+  <h2>How to <em>Identify</em> the Flaw</h2>
+
+  <p>Before you look at the answer choices, you should be able to answer this question in your own words: why does the conclusion not follow from the premises? If you can articulate the problem clearly before reading the choices, you will find the right answer far more quickly and accurately.</p>
+
+  <p>Two productive questions to ask yourself as you read every stimulus:</p>
+
+  <div class="callout">
+    <p><strong>1. What does the conclusion actually claim?</strong><br>Be precise. A conclusion that says "this policy will reduce crime" is very different from one that says "this policy might reduce crime." The exact words matter enormously on the LSAT.</p>
+    <p><strong>2. What would need to be true for the premises to actually support that conclusion?</strong><br>Whatever must be assumed but is not stated — that is the flaw. The argument is treating an assumption as though it were a proven fact.</p>
+  </div>
+</div>
+
+<!-- PART 2 -->
+
+<div id="p2">
+  <hr class="sr" />
+  <div class="part-lbl">Part Two</div>
+  <h2>The Complete <em>Flaw Taxonomy</em></h2>
+
+  <p>The LSAT draws on a specific, recurring set of logical errors. Every Flaw question you will ever see falls into one of the categories below. Click each card to read the full definition, a plain-language example, and the exact language the LSAT uses in correct answers.</p>
+
+  <!-- GROUP A -->
+
+  <div class="flaw-group">Group A — Causal and Statistical Flaws</div>
+
+  <div class="fc open" id="fc1">
+    <div class="fc-header" onclick="toggleFC('fc1')">
+      <span class="fc-num">01</span>
+      <span class="fc-name">Confusing Correlation with Causation</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>This is the single most tested flaw on the LSAT. The argument observes that two things occur together — that they are correlated — and concludes that one must be causing the other. But correlation alone does not establish causation. Both things could be caused by a third factor, the causal direction could be reversed, or the co-occurrence could be coincidental.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"Studies show that cities with more hospitals have higher death rates. Therefore, hospitals cause death."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument concludes that [X causes Y] based only on evidence that [X and Y are associated], without eliminating alternative explanations for the correlation.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc2">
+    <div class="fc-header" onclick="toggleFC('fc2')">
+      <span class="fc-num">02</span>
+      <span class="fc-name">Ignoring an Alternative Cause</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>A close relative of the causation flaw. Here the argument does establish that X caused Y, but then draws a further conclusion that ignores the possibility that something else could have produced the same result. The argument treats one identified cause as though it must be the only possible cause.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"The increase in sales followed our new advertising campaign. Therefore, the advertising caused the increase."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument fails to consider that [Y] might have occurred even without [X], or that another factor was responsible for [Y].</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc3">
+    <div class="fc-header" onclick="toggleFC('fc3')">
+      <span class="fc-num">03</span>
+      <span class="fc-name">Hasty Generalisation</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument draws a broad conclusion about a large group based on evidence about a small or unrepresentative sample. The sample may be too small, too specific, or selected in a way that makes it unrepresentative of the population the conclusion is about.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"The three lawyers I spoke to prefer working in large firms. Therefore, most lawyers prefer large firms."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument draws a general conclusion about [the population] based on a sample that may not be representative of that population.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc4">
+    <div class="fc-header" onclick="toggleFC('fc4')">
+      <span class="fc-num">04</span>
+      <span class="fc-name">Confusing Percentages with Absolute Numbers</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument moves between relative figures and absolute figures as though they mean the same thing. A higher percentage does not mean a larger absolute number if the total populations differ significantly. Conversely, a larger absolute number does not mean a higher rate.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"Forty percent of students at School A failed the exam, but only twenty percent failed at School B. So more students failed at School A."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument treats a higher [percentage/rate] as equivalent to a higher [absolute number], without accounting for differences in the size of the groups being compared.</div>
+    </div>
+  </div>
+
+  <!-- GROUP B -->
+
+  <div class="flaw-group">Group B — Structural and Logical Flaws</div>
+
+  <div class="fc" id="fc5">
+    <div class="fc-header" onclick="toggleFC('fc5')">
+      <span class="fc-num">05</span>
+      <span class="fc-name">Confusing Necessary and Sufficient Conditions</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>A sufficient condition guarantees a result. A necessary condition is required for a result but does not alone guarantee it. The argument treats one as the other. The two most common errors: assuming that because a sufficient condition is absent, the result cannot occur (denying the antecedent); and assuming that because a necessary condition is present, the result must occur (affirming the consequent).</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"All great lawyers are hardworking. Julia is hardworking. Therefore, Julia is a great lawyer."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument treats a condition that is [necessary/sufficient] for [X] as though it were [sufficient/necessary] for [X].</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc6">
+    <div class="fc-header" onclick="toggleFC('fc6')">
+      <span class="fc-num">06</span>
+      <span class="fc-name">Circular Reasoning</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The conclusion of the argument is simply a restatement of one of the premises. The argument uses what it is trying to prove as evidence for that very conclusion — it goes in a circle rather than making a genuine logical step forward.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"This painting is beautiful because it has great aesthetic value, and we know it has aesthetic value because it is a beautiful work."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument assumes what it sets out to prove, using the conclusion as a premise in its own support.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc7">
+    <div class="fc-header" onclick="toggleFC('fc7')">
+      <span class="fc-num">07</span>
+      <span class="fc-name">False Dichotomy</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument presents two options as though they are the only possibilities, eliminates one, and concludes the other must be true. In reality, there are other options the argument ignores entirely. The either/or framing is not justified by the evidence.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"Either we raise taxes or we cut public services. We cannot raise taxes. Therefore, we must cut services."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument presupposes that [A] and [B] are the only available options, when other possibilities exist that the argument has not considered.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc8">
+    <div class="fc-header" onclick="toggleFC('fc8')">
+      <span class="fc-num">08</span>
+      <span class="fc-name">Equivocation</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument uses the same word or phrase in two different senses, treating them as though they mean the same thing when they do not. The logical step depends entirely on this hidden shift in meaning — if you held the word to one definition throughout, the argument would collapse.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"Laws of nature cannot be violated. The law against theft is a law. Therefore, theft cannot occur."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument uses the term "[word]" in two different senses — [first meaning] and [second meaning] — treating these distinct meanings as equivalent.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc9">
+    <div class="fc-header" onclick="toggleFC('fc9')">
+      <span class="fc-num">09</span>
+      <span class="fc-name">Part-to-Whole and Whole-to-Part</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>Composition: what is true of each individual part must be true of the whole. Division: what is true of the whole must be true of each individual part. Both are invalid inferences. A team of excellent players may play poorly together. An excellent team may contain weaker individual players.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"Each component of this machine was built to the highest standard. Therefore, this machine is built to the highest standard."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument assumes that what is true of the [parts/whole] must also be true of the [whole/parts].</div>
+    </div>
+  </div>
+
+  <!-- GROUP C -->
+
+  <div class="flaw-group">Group C — Scope and Comparison Flaws</div>
+
+  <div class="fc" id="fc10">
+    <div class="fc-header" onclick="toggleFC('fc10')">
+      <span class="fc-num">10</span>
+      <span class="fc-name">Scope Shift</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The premises establish a claim about one thing, but the conclusion makes a claim about something slightly but importantly different. The subject, scale, or nature of the claim shifts between the evidence and the conclusion in a way the argument never justifies. This is one of the subtlest flaws on the LSAT — the shift is often just a single word.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"Studies show this drug reduces symptoms in the short term. Therefore, this drug is an effective treatment."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument moves from evidence about [narrow claim] to a conclusion about [broader or different claim], without justifying that extension.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc11">
+    <div class="fc-header" onclick="toggleFC('fc11')">
+      <span class="fc-num">11</span>
+      <span class="fc-name">Treating Possibility as Certainty</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The premises show that something could be, might be, or is possibly true. The conclusion then states it as though it definitely is true. The argument upgrades the strength of the claim without any additional justification — crossing from possible to certain in a single, unjustified step.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"It is possible that the defendant was at the scene. Therefore, the defendant was at the scene."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument treats what has been shown to be merely [possible/likely/conceivable] as though it has been established to be [certain/definitely true].</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc12">
+    <div class="fc-header" onclick="toggleFC('fc12')">
+      <span class="fc-num">12</span>
+      <span class="fc-name">False Analogy</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument compares two things and concludes that because they are similar in one respect, they must be similar in another. The comparison is flawed because the two things differ in ways that are relevant to the conclusion being drawn.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"Managing a country is like managing a business. Since successful businesses cut costs to improve performance, countries should cut spending to improve their economies."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument assumes that [A] and [B] are sufficiently similar to justify the comparison, when they differ in ways that are relevant to the conclusion.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc13">
+    <div class="fc-header" onclick="toggleFC('fc13')">
+      <span class="fc-num">13</span>
+      <span class="fc-name">Time Shift</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The evidence is drawn from one point in time, but the conclusion is about a different time period. The argument assumes conditions have stayed constant when they may have changed significantly.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"In surveys conducted ten years ago, most employees said they preferred office work. Therefore, most employees today prefer office work."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument draws a conclusion about [current/future conditions] based on evidence about [past conditions], without establishing that the relevant circumstances have remained the same.</div>
+    </div>
+  </div>
+
+  <!-- GROUP D -->
+
+  <div class="flaw-group">Group D — Rhetorical Flaws</div>
+
+  <div class="fc" id="fc14">
+    <div class="fc-header" onclick="toggleFC('fc14')">
+      <span class="fc-num">14</span>
+      <span class="fc-name">Ad Hominem</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument attacks the character, credibility, or motives of a person rather than addressing the substance of their argument. Even if the criticism of the person is accurate, it tells us nothing about whether their argument is logically sound.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"We should ignore Dr. Chen's research on climate policy because she receives funding from environmental organisations."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument dismisses [person's] position by attacking their [character/motives/credibility] rather than by identifying a flaw in the argument itself.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc15">
+    <div class="fc-header" onclick="toggleFC('fc15')">
+      <span class="fc-num">15</span>
+      <span class="fc-name">Inappropriate Appeal to Authority</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument cites an expert or authority as support for a claim, but the authority's expertise is in a different field, or the authority is not genuinely an expert in the relevant area. Note: an appeal to authority is only a flaw when the authority is inappropriate — citing a genuine relevant expert is valid reasoning.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"This nutritional supplement must be effective — a famous actor says it changed their life."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument relies on the opinion of [an authority] whose expertise does not extend to the claim being made.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc16">
+    <div class="fc-header" onclick="toggleFC('fc16')">
+      <span class="fc-num">16</span>
+      <span class="fc-name">Appeal to Popularity</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument concludes that something is true, correct, or good because many people believe it, do it, or approve of it. The number of people who hold a view has no bearing on whether that view is logically correct.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"Millions of people believe this traditional remedy works. It must therefore have real medicinal value."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument infers that [conclusion] is [true/correct] from the fact that it is [widely believed/popular], when popular acceptance does not establish truth.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc17">
+    <div class="fc-header" onclick="toggleFC('fc17')">
+      <span class="fc-num">17</span>
+      <span class="fc-name">Straw Man</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument misrepresents an opposing view — exaggerating it, oversimplifying it, or distorting it — and then refutes the misrepresentation rather than the actual position. A straw man is easier to knock down than the real argument, which is precisely why it is used.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"My opponent argues for reduced military spending. But a country that abandons its defence entirely invites attack. We must not abandon our defence."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument attributes to [the opponent] a position they did not actually hold — or a more extreme version of what they claimed — then argues against that distorted version.</div>
+    </div>
+  </div>
+
+  <div class="fc" id="fc18">
+    <div class="fc-header" onclick="toggleFC('fc18')">
+      <span class="fc-num">18</span>
+      <span class="fc-name">Treating Inability to Disprove as Proof</span>
+      <span class="fc-chevron">▾</span>
+    </div>
+    <div class="fc-body">
+      <p>The argument concludes that because no one has proven X is false, X must be true. The absence of evidence against a claim is not evidence for it. Absence of disproof is not equivalent to proof.</p>
+      <div class="fc-lbl">Example</div>
+      <div class="fc-example">"No one has ever proven that this investment strategy loses money. Therefore, it must be reliable."</div>
+      <div class="fc-lbl">How the LSAT describes this flaw</div>
+      <div class="fc-pattern">The argument concludes that [X is true] merely because [X has not been shown to be false], treating the absence of disproof as equivalent to proof.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PART 3 -->
+
+<div id="p3">
+  <hr class="sr" />
+  <div class="part-lbl">Part Three</div>
+  <h2>How to <em>Approach</em> Flaw Questions</h2>
+
+  <p>A consistent process matters enormously on timed questions. Here is the exact sequence to follow every single time you encounter a Flaw question.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div>
+        <div class="step-title">Read the stimulus actively.</div>
+        <p class="step-body">Separate the premises from the conclusion as you read. Ask yourself: what is this argument trying to prove? Signal words like "therefore", "thus", "so", and "hence" typically introduce conclusions. Words like "because", "since", and "given that" typically introduce premises. If there is no signal word, the conclusion is often the first or last sentence.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div>
+        <div class="step-title">Identify the gap before reading the choices.</div>
+        <p class="step-body">After reading the stimulus, pause. Ask: why does the conclusion not follow from the premises? Name the flaw in your own words — even one or two words is enough. "Causation from correlation." "False dichotomy." "Ad hominem." Having a pre-formed answer makes you far less susceptible to the traps the wrong choices set.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div>
+        <div class="step-title">Match, do not search.</div>
+        <p class="step-body">Read the answer choices looking for the one that matches what you identified. You are not discovering the flaw from the choices — you are confirming it. The correct answer will describe the logical error accurately and in abstract terms. It will not necessarily mention the specific content of the argument.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div>
+        <div class="step-title">Eliminate with purpose.</div>
+        <p class="step-body">If more than one choice seems plausible, ask: does this answer describe a flaw that is actually present in this specific argument? An answer may describe a genuine logical flaw but simply not be the flaw committed here. That answer is wrong. The correct answer must describe what went wrong in this argument specifically.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Answer Choice Traps</h3>
+  <p>Wrong answers on Flaw questions follow predictable patterns. Recognising them saves significant time.</p>
+
+  <div class="traps">
+    <div class="trap">
+      <div class="trap-title">The True But Irrelevant Flaw</div>
+      <p class="trap-body">The answer describes a genuine logical flaw — just not one that is present in this argument. The LSAT will offer you a tempting flaw that sounds relevant but does not match what the argument actually did wrong. Always verify: is this the flaw in this specific argument?</p>
+    </div>
+    <div class="trap">
+      <div class="trap-title">The Correct Description That Is Not a Flaw</div>
+      <p class="trap-body">Some choices accurately describe something the argument did, but describe it in a way that sounds like a criticism when it is not actually a logical error. Read carefully — does this answer actually identify a logical problem, or does it just describe a feature of the argument?</p>
+    </div>
+    <div class="trap">
+      <div class="trap-title">The Overstrong Answer</div>
+      <p class="trap-body">The answer describes a flaw more severe than what the argument actually commits. The argument made a moderate leap; the answer describes a complete logical collapse. These are tempting because they identify the right category of flaw but exaggerate it.</p>
+    </div>
+    <div class="trap">
+      <div class="trap-title">The Outside Scope Answer</div>
+      <p class="trap-body">The answer describes what would be needed to strengthen or fix the argument, rather than identifying what is wrong with it. These answers look helpful rather than critical. They are always wrong on Flaw questions.</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /rz-inner -->
+</div><!-- /rz -->
+
+<!-- ═══════════════ WORKED QUESTIONS ═══════════════ -->
+
+<div class="dark-section" id="p4">
+<div class="dark-inner">
+  <div class="part-lbl">Part Four</div>
+  <h2>Worked <em>Questions</em></h2>
+  <p>Select your answer before the explanation is revealed. Each question has a full explanation covering why the correct answer is right and why the most tempting wrong answer fails.</p>
+
+  <!-- Q1 -->
+
+  <div class="qb" id="q1">
+    <div class="qb-num">Worked Question 1</div>
+    <div class="qb-stimulus">The number of cars sold by Meridian Motors increased by fifteen percent last year. The company's new television advertising campaign began at the start of that same year. It is clear, therefore, that the advertising campaign was responsible for the increase in sales.</div>
+    <div class="qb-stem">The argument is flawed because it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn" onclick="answer('q1',0,1)"><span class="cl">A</span><span>assumes that the advertising campaign was more effective than previous campaigns</span></button>
+      <button class="qb-btn" onclick="answer('q1',1,1)"><span class="cl">B</span><span>concludes that one event caused another simply because the two events occurred together</span></button>
+      <button class="qb-btn" onclick="answer('q1',2,1)"><span class="cl">C</span><span>fails to consider whether car sales at other companies also increased last year</span></button>
+      <button class="qb-btn" onclick="answer('q1',3,1)"><span class="cl">D</span><span>relies on sales figures without specifying which models contributed most to the increase</span></button>
+      <button class="qb-btn" onclick="answer('q1',4,1)"><span class="cl">E</span><span>overlooks the possibility that advertising campaigns are generally ineffective</span></button>
+    </div>
+    <div class="qb-exp" id="exp-q1">
+      <div class="exp-lbl">Explanation</div>
+      <p>This is a classic causation-from-correlation flaw. The argument observes that sales increased during the same period as the advertising campaign and immediately concludes the campaign caused the increase. But the mere fact that two things happened at the same time does not establish that one caused the other. Sales could have risen because of economic conditions, competitor pricing changes, a new model launch, or any number of other factors. Answer B captures this precisely. Answer C is tempting — comparing to other companies is intuitively relevant — but the flaw in this argument is not a failure to make that comparison. The flaw is the unjustified causal inference itself.</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+
+  <div class="qb" id="q2">
+    <div class="qb-num">Worked Question 2</div>
+    <div class="qb-stimulus">Either the city council approves the new development plan, or the downtown area will continue to decline. The council has indicated it will not approve the plan. We must therefore accept that downtown decline is inevitable.</div>
+    <div class="qb-stem">The reasoning above is questionable because it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn" onclick="answer('q2',0,1)"><span class="cl">A</span><span>concludes that a future event is certain based on current intentions that may change</span></button>
+      <button class="qb-btn" onclick="answer('q2',1,1)"><span class="cl">B</span><span>presents only two outcomes as possible when other alternatives may exist</span></button>
+      <button class="qb-btn" onclick="answer('q2',2,1)"><span class="cl">C</span><span>assumes that the council's decision will be permanent rather than subject to review</span></button>
+      <button class="qb-btn" onclick="answer('q2',3,1)"><span class="cl">D</span><span>fails to define what is meant by the decline of the downtown area</span></button>
+      <button class="qb-btn" onclick="answer('q2',4,1)"><span class="cl">E</span><span>treats the council's preferences as equivalent to the interests of residents</span></button>
+    </div>
+    <div class="qb-exp" id="exp-q2">
+      <div class="exp-lbl">Explanation</div>
+      <p>This is a false dichotomy. The argument presents exactly two options — approval of this specific plan, or inevitable decline — as though they are the only possibilities. But there could be other development plans, different policy approaches, private investment, or other interventions that could address downtown decline. The argument has artificially restricted the available options to two. Answer B identifies this directly. Answer A is plausible on a first read but misses the point entirely — the flaw is not about the permanence or changeability of the council's decision. The flaw is the false either/or structure of the argument itself.</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+
+  <div class="qb" id="q3">
+    <div class="qb-num">Worked Question 3</div>
+    <div class="qb-stimulus">Professor Okafor argues that the university should increase funding for the arts faculty. However, Professor Okafor sits on the arts faculty hiring committee and has consistently advocated for expanding the arts programme. Her argument therefore cannot be taken seriously.</div>
+    <div class="qb-stem">The argument above is vulnerable to criticism because it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn" onclick="answer('q3',0,2)"><span class="cl">A</span><span>dismisses a position by questioning the motives of the person who holds it, rather than by addressing the merits of that position</span></button>
+      <button class="qb-btn" onclick="answer('q3',1,2)"><span class="cl">B</span><span>assumes that financial interests necessarily compromise academic judgment</span></button>
+      <button class="qb-btn" onclick="answer('q3',2,2)"><span class="cl">C</span><span>fails to consider whether arts funding has historically been adequate</span></button>
+      <button class="qb-btn" onclick="answer('q3',3,2)"><span class="cl">D</span><span>draws a general conclusion about university funding from a single faculty member's view</span></button>
+      <button class="qb-btn" onclick="answer('q3',4,2)"><span class="cl">E</span><span>treats an increase in funding as a solution without examining whether it would be effective</span></button>
+    </div>
+    <div class="qb-exp" id="exp-q3">
+      <div class="exp-lbl">Explanation</div>
+      <p>This is an ad hominem argument. The argument does not engage with Professor Okafor's reasoning at all — it simply notes that she has professional reasons to want arts funding increased, and uses that to dismiss her argument entirely. But even a self-interested argument can be logically correct. Her potential bias tells us to scrutinise her reasoning carefully; it does not tell us the reasoning is unsound. Answer A captures this precisely: the argument attacks the person rather than the argument. Answer B is partially related but introduces "financial interests" specifically — the argument actually attacks her professional advocacy history and committee role, which is slightly different and makes B less precise than A.</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+
+  <div class="qb" id="q4">
+    <div class="qb-num">Worked Question 4</div>
+    <div class="qb-stimulus">A long-term study found that people who drink coffee regularly are more likely to report high energy levels than those who do not. A separate study found that people who report high energy levels are more likely to exercise regularly. We can conclude that regular coffee consumption causes people to exercise more.</div>
+    <div class="qb-stem">The flawed pattern of reasoning in the argument above is:</div>
+    <div class="qb-choices">
+      <button class="qb-btn" onclick="answer('q4',0,1)"><span class="cl">A</span><span>inferring a causal relationship between two variables from a direct observation of one affecting the other</span></button>
+      <button class="qb-btn" onclick="answer('q4',1,1)"><span class="cl">B</span><span>drawing a conclusion about a causal chain based on two separate correlational findings, without establishing that the links hold in combination</span></button>
+      <button class="qb-btn" onclick="answer('q4',2,1)"><span class="cl">C</span><span>treating a study conducted on one population as applicable to all populations</span></button>
+      <button class="qb-btn" onclick="answer('q4',3,1)"><span class="cl">D</span><span>assuming that energy levels are the only factor that influences exercise frequency</span></button>
+      <button class="qb-btn" onclick="answer('q4',4,1)"><span class="cl">E</span><span>relying on self-reported data, which may not accurately reflect actual behaviour</span></button>
+    </div>
+    <div class="qb-exp" id="exp-q4">
+      <div class="exp-lbl">Explanation</div>
+      <p>This is a more complex version of the causation flaw. The argument chains two correlations together — coffee correlates with energy, energy correlates with exercise — and leaps to a direct causal conclusion about coffee and exercise. Neither individual study established causation; both established correlation only. Even if both correlations are valid, the chain does not guarantee a direct causal relationship between coffee and exercise, and many other factors influence both energy levels and exercise habits. Answer B captures the specific structure of this flaw precisely. Answer A would be correct if the argument had directly observed coffee affecting exercise behaviour — it did not. It used two separate, indirect correlational studies, which makes B the more accurate description.</p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+
+  <div class="qb" id="q5">
+    <div class="qb-num">Worked Question 5</div>
+    <div class="qb-stimulus">Reducing the speed limit on the motorway from 70 mph to 60 mph is unnecessary. No studies have conclusively proven that driving at 70 mph causes more accidents than driving at 60 mph under normal conditions.</div>
+    <div class="qb-stem">The argument is most vulnerable to criticism on the grounds that it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn" onclick="answer('q5',0,1)"><span class="cl">A</span><span>assumes that accident rates are the only relevant consideration in setting speed limits</span></button>
+      <button class="qb-btn" onclick="answer('q5',1,1)"><span class="cl">B</span><span>relies on the absence of proof of harm as sufficient grounds to conclude there is no harm</span></button>
+      <button class="qb-btn" onclick="answer('q5',2,1)"><span class="cl">C</span><span>fails to consider whether a 60 mph limit would create economic costs due to longer journey times</span></button>
+      <button class="qb-btn" onclick="answer('q5',3,1)"><span class="cl">D</span><span>treats normal driving conditions as representative of all driving conditions</span></button>
+      <button class="qb-btn" onclick="answer('q5',4,1)"><span class="cl">E</span><span>uses the term "unnecessary" without defining what standard of necessity is being applied</span></button>
+    </div>
+    <div class="qb-exp" id="exp-q5">
+      <div class="exp-lbl">Explanation</div>
+      <p>This is the "treating inability to disprove as proof" flaw. The argument's entire basis for calling the speed reduction unnecessary is that no study has conclusively proven the higher speed is more dangerous. But the absence of conclusive proof is not the same as proof of safety. Studies may not have been conducted, may have been inconclusive for methodological reasons, or may require further replication. The argument treats a gap in the evidence as positive evidence for safety, which is a logical error. Answer B captures this exactly. Answer A raises a legitimate concern — other factors beyond accident rates do matter in speed limit decisions — but it describes what the argument omits rather than identifying the logical flaw that is actually present in the reasoning.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════ DRILL SET ═══════════════ -->
+
+<div class="dark-section" id="p5">
+<div class="dark-inner">
+  <div class="part-lbl">Part Five</div>
+  <h2>Drill <em>Set</em></h2>
+  <p>Work through these five questions under timed conditions. Allow yourself no more than ninety seconds per question. Answers are in the key below — do not look until you have answered all five.</p>
+
+  <!-- D1 -->
+
+  <div class="qb">
+    <div class="qb-num">Question 1 of 5</div>
+    <div class="qb-stimulus">The residents of Westfield who responded to the city's recent survey overwhelmingly supported the construction of a new sports complex. The city should therefore proceed with the project, since it clearly reflects what the residents of Westfield want.</div>
+    <div class="qb-stem">The argument above is flawed because it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn"><span class="cl">A</span><span>assumes that what residents want is always in the city's best financial interest</span></button>
+      <button class="qb-btn"><span class="cl">B</span><span>draws a conclusion about the preferences of all residents from a sample that may not represent them</span></button>
+      <button class="qb-btn"><span class="cl">C</span><span>fails to specify what kind of sports complex the residents were asked about</span></button>
+      <button class="qb-btn"><span class="cl">D</span><span>treats the construction of a sports complex as a solution to the city's needs without examination</span></button>
+      <button class="qb-btn"><span class="cl">E</span><span>ignores the possibility that residents' preferences may change before construction begins</span></button>
+    </div>
+  </div>
+
+  <!-- D2 -->
+
+  <div class="qb">
+    <div class="qb-num">Question 2 of 5</div>
+    <div class="qb-stimulus">All members of the review board are required to have at least five years of industry experience. Marcus has twelve years of industry experience. He is therefore qualified to serve on the review board.</div>
+    <div class="qb-stem">The reasoning is flawed because it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn"><span class="cl">A</span><span>fails to consider whether twelve years of experience is excessive for the board's purposes</span></button>
+      <button class="qb-btn"><span class="cl">B</span><span>treats a condition that is necessary for board membership as though it were sufficient for it</span></button>
+      <button class="qb-btn"><span class="cl">C</span><span>assumes that the review board's requirement is the appropriate standard for qualification</span></button>
+      <button class="qb-btn"><span class="cl">D</span><span>does not specify what kind of industry experience is relevant to board membership</span></button>
+      <button class="qb-btn"><span class="cl">E</span><span>draws a conclusion about Marcus from a rule that applies to all members generally</span></button>
+    </div>
+  </div>
+
+  <!-- D3 -->
+
+  <div class="qb">
+    <div class="qb-num">Question 3 of 5</div>
+    <div class="qb-stimulus">Our investigation found that neighbourhoods with more street lighting experience lower rates of reported crime. Installing more street lighting across the city would therefore be an effective strategy for reducing criminal activity.</div>
+    <div class="qb-stem">The argument's reasoning is most open to challenge because it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn"><span class="cl">A</span><span>assumes that reduced reported crime necessarily reflects reduced actual crime</span></button>
+      <button class="qb-btn"><span class="cl">B</span><span>concludes that a factor associated with lower crime in some areas would cause crime reduction if introduced more broadly, without ruling out alternative explanations</span></button>
+      <button class="qb-btn"><span class="cl">C</span><span>fails to consider the cost of installing and maintaining street lighting citywide</span></button>
+      <button class="qb-btn"><span class="cl">D</span><span>treats the investigation's findings as more reliable than they may actually be</span></button>
+      <button class="qb-btn"><span class="cl">E</span><span>assumes that all types of crime are equally affected by lighting conditions</span></button>
+    </div>
+  </div>
+
+  <!-- D4 -->
+
+  <div class="qb">
+    <div class="qb-num">Question 4 of 5</div>
+    <div class="qb-stimulus">The ancient Romans built roads that have lasted two thousand years. Modern engineers have access to far superior materials and techniques than the Romans did. There is no reason why modern roads should not last even longer.</div>
+    <div class="qb-stem">The argument is vulnerable to the criticism that it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn"><span class="cl">A</span><span>compares ancient and modern engineering without defining what constitutes road quality</span></button>
+      <button class="qb-btn"><span class="cl">B</span><span>assumes that better materials and techniques guarantee superior durability, without considering factors such as traffic volume, maintenance, and usage patterns</span></button>
+      <button class="qb-btn"><span class="cl">C</span><span>treats Roman road construction as a definitive benchmark against which modern work should be measured</span></button>
+      <button class="qb-btn"><span class="cl">D</span><span>fails to acknowledge that some Roman roads have not survived to the present day</span></button>
+      <button class="qb-btn"><span class="cl">E</span><span>draws a conclusion about all modern roads from evidence about the capabilities of modern engineers</span></button>
+    </div>
+  </div>
+
+  <!-- D5 -->
+
+  <div class="qb">
+    <div class="qb-num">Question 5 of 5</div>
+    <div class="qb-stimulus">Councillor Reyes has proposed that the library's opening hours be extended. But Councillor Reyes has repeatedly shown poor judgment on budgetary matters, and extending library hours would require additional funding. The proposal should not be adopted.</div>
+    <div class="qb-stem">The argument above is most vulnerable to criticism because it:</div>
+    <div class="qb-choices">
+      <button class="qb-btn"><span class="cl">A</span><span>fails to provide evidence that extending library hours would require significant additional funding</span></button>
+      <button class="qb-btn"><span class="cl">B</span><span>rejects a proposal based on the proposer's track record rather than on the merits of the proposal itself</span></button>
+      <button class="qb-btn"><span class="cl">C</span><span>assumes that the library's current opening hours are adequate for the needs of residents</span></button>
+      <button class="qb-btn"><span class="cl">D</span><span>conflates poor judgment on budgetary matters with poor judgment on service provision</span></button>
+      <button class="qb-btn"><span class="cl">E</span><span>treats council approval as the only mechanism by which library hours could be extended</span></button>
+    </div>
+  </div>
+
+  <!-- ANSWER KEY -->
+
+  <div class="answer-key">
+    <div class="ak-header-row">
+      <div class="ak-header-cell">Question</div>
+      <div class="ak-header-cell">Answer</div>
+      <div class="ak-header-cell">Flaw Type</div>
+    </div>
+    <div class="ak-row"><div class="ak-cell">Question 1</div><div class="ak-cell ans">B</div><div class="ak-cell">Hasty Generalisation — survey respondents may not represent all residents</div></div>
+    <div class="ak-row"><div class="ak-cell">Question 2</div><div class="ak-cell ans">B</div><div class="ak-cell">Necessary vs Sufficient — five years is required but does not alone qualify</div></div>
+    <div class="ak-row"><div class="ak-cell">Question 3</div><div class="ak-cell ans">B</div><div class="ak-cell">Confusing Correlation with Causation — association does not establish causation</div></div>
+    <div class="ak-row"><div class="ak-cell">Question 4</div><div class="ak-cell ans">B</div><div class="ak-cell">False Analogy — better materials do not account for differences in use and maintenance</div></div>
+    <div class="ak-row"><div class="ak-cell">Question 5</div><div class="ak-cell ans">B</div><div class="ak-cell">Ad Hominem — the argument attacks the councillor rather than the proposal</div></div>
+  </div>
+
+  <!-- CLOSING NOTE -->
+
+  <div class="closing">
+    <div class="closing-lbl">A note on practice</div>
+    <p>Flaw questions reward pattern recognition above almost everything else. The more arguments you analyse — not just practice, but actively dissect — the faster you will see the gap between premises and conclusion and name it precisely. Every argument you encounter in daily life is practice material: news articles, opinion pieces, conversations. Train yourself to ask, constantly: does this conclusion actually follow? That habit of mind is exactly what the LSAT is measuring. It is also what good legal reasoning requires.</p>
+    <p>acalo.live &nbsp;·&nbsp; acaloprep@gmail.com</p>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <a href="index.html" class="f-logo">Academia Logica</a>
+  <div class="f-links">
+    <a href="guides.html">Guides</a>
+    <a href="resources.html">Resources</a>
+    <a href="https://youtube.com/@theacademialogica" target="_blank">YouTube</a>
+    <a href="mailto:acaloprep@gmail.com">Email</a>
+  </div>
+  <div class="f-copy">© 2026 Sayon Bhattacharya</div>
+</footer>
+
+<script>
+  // Nav
+  const ham = document.getElementById('ham'), mob = document.getElementById('mob');
+  ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); }));
+
+  // Flaw card toggle
+  function toggleFC(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+
+  // Worked question answer handler
+  // correct param: 1 = index 1 (B), 2 = index 0 (A), etc. — pass correct index
+  function answer(qid, chosen, correct) {
+    const qb = document.getElementById(qid);
+    const btns = qb.querySelectorAll('.qb-btn');
+    if (btns[0].disabled) return; // already answered
+    btns.forEach((btn, i) => {
+      btn.disabled = true;
+      if (i === correct) btn.classList.add('correct');
+      else if (i === chosen && chosen !== correct) btn.classList.add('wrong');
+      else btn.classList.add('dimmed');
+    });
+    const exp = document.getElementById('exp-' + qid);
+    exp.classList.add('show');
+    setTimeout(() => exp.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+  }
+</script>
+
+</body>
+</html>
